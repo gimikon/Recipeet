@@ -1,0 +1,28 @@
+<h1>Sign up!</h1>
+
+<%= form_for @user do |f| %>
+
+<fieldset>
+  <%= f.label :username %>
+  <%= f.text_field :username, :required => true, :autofocus => true %>
+</fieldset>
+
+
+<fieldset>
+  <%= f.label :email %>
+  <%= f.email_field :email, :required => true %>
+</fieldset>
+
+<fieldset>
+  <%= f.label :password %>
+  <%= f.password_field :password, :required => true %>
+</fieldset>
+
+<fieldset>
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation, :required => true %>
+</fieldset>
+
+<%= f.submit "Sign up!" %>
+
+<% end %>
