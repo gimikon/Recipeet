@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
-
-  def welcome
+  def signup
+    @user = User.new
+    
   end
-
 end

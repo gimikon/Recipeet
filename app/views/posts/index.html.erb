@@ -1,0 +1,10 @@
+<h1>All Recipeets!</h1>
+
+
+<% @posts.each do |post| %>
+<div class= post.title>
+  <p><%= post.title %></p>
+  <%= link_to(post.content, "/posts/#{post.id}" )%>
+  <img src="<%= post.image %>" alt="">
+</div>
+<% end %>

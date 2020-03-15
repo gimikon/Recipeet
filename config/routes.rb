@@ -1,9 +1,24 @@
 Rails.application.routes.draw do
-root :to => "pages#welcome"
-resources :users, :only => [:new, :create, :index]
+  root :to => "home#top"
+  get 'top' => 'home#top'
+  get 'about' => 'home#about'
+  get '/' => 'home#top'
 
-get'/login' => 'sessions#new'
-post'/login' => 'sessions#create'
-delete'/login' => 'sessions#destroy'
+
+  get '/pages/signup' => "pages#signup"
+
+  get'/login' => 'session#new'
+  post'/login' => 'session#create'
+  delete'/login' => 'session#destroy'
+
+  post 'posts/:id/update' => 'posts#update'
+  post 'posts/:id/destroy' => 'posts#destroy'
+
+
+resources :users, :only => [:new, :create, :index]
+resources :posts
+
+
+
 
 end

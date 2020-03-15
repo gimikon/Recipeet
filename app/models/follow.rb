@@ -1,2 +1,2 @@
 class Follow < ApplicationRecord
-end
+belongs_to :user, :optional => true

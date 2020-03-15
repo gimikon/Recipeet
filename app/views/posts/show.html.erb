@@ -1,0 +1,11 @@
+<h1><%= @post.title %></h1>
+
+<%# <%= image_tag @post.image.present?, :class => 'feature', :alt => @post.title %> %>
+
+<ul>
+  <li>Title: <%= @post.title %></li>
+  <li>Content: <%= @post.content %></li>
+</ul>
+
+<%= link_to("edit", "/posts/#{@post.id}/edit") %>
+<%= link_to("Delete", "/posts/#{@post.id}/destroy", {method:"post"}) %>

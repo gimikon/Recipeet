@@ -1,0 +1,13 @@
+ <%= form_tag("/posts/#{@post.id}/update") do %>
+<h1><%= @post.title %></h1>
+
+<%= image_tag @post.image, :class => 'feature', :alt => @post.title %>
+
+<ul>
+  <textarea name="title"><%= @post.title %></textarea>
+  <textarea name="content"><%= @post.content %></textarea>
+</ul>
+
+<button>submit</button>
+
+<% end %>
