@@ -2,9 +2,9 @@
 
 <%= form_tag("/users/#{@user.id}/update") do %>
 
-<p><%= @user.username %></p>
+<p><%= @user.name %></p>
 
-  <input name="username" value="<%= @user.username %>">
+  <input name="name" value="<%= @user.name %>">
   <input name="email" value="<%= @user.email %>">
 
 <input type="submit" value="submit">

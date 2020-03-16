@@ -11,8 +11,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(title: params[:title])
-    @post = Post.new(content: params[:content])
+    @post = Post.new(content: params[:content], user_id: @current_user.id)
     @post.save
     redirect_to("/posts")
   end

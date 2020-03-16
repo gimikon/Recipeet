@@ -1,9 +1,15 @@
 <h1>All Recipeets!</h1>
 
+<a href="posts/new">New Recipeet</a>
+
 
 <% @posts.each do |post| %>
-<div class= post.title>
-  <p><%= post.title %></p>
+
+  <p><%= post.content %></p>
+  <p><%= post.user_id %></p>
+
+
+
   <%= link_to(post.content, "/posts/#{post.id}" )%>
   <img src="<%= post.image %>" alt="">
 </div>

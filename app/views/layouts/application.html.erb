@@ -7,25 +7,29 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">
-
 
   </head>
+
   <header>
-    <body>
-    <div class="header-logo">
-      Recipeet!
+
+    <div class="top-container">
+
+        <li><%= link_to("Home","/") %></li>
+        <li><%= link_to("About","/about") %></li>
+        <li><%= link_to("Log in","/login") %></li>
+        <li><%= link_to("Sign up!","/signup") %></li>
+
     </div>
-    <ul class="header-menus">
-      <li><%= link_to("Home","/") %></li>
-      <li><%= link_to("About","/about") %></li>
-      <li><%= link_to("Log in","/login") %></li>
-      <li><%= link_to("Sign up!","/pages/signup") %></li>
-      <li><%= link_to("Recipeet!","/posts/new") %></li>
+
+</header>
+
+    <div class="header-logo">
+      Recipeet
 
 
-    </ul>
-  </header>
+<body>
+
+
     </body>
 
   <%= yield %>
