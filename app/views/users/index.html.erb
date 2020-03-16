@@ -2,6 +2,9 @@
 
 <% @users.each do |user| %>
 
+<div>
+<p><%= user.username %></p>
 <%= link_to user.email, user %>
 
 <% end %>
+</div>

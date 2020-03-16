@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     @user = User.new user_params
     if @user.save
       session[:user_id] = @user.id
+      flash[:notice] = "New user has been successfully created"
       redirect_to("/posts")
     else
       render :new
@@ -19,7 +20,23 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by(id:params[:id])
+    @user = User.find_by(id: params[:id])
+  end
+
+  def edit
+    @user = User.find_by(id: params[:id])
+  end
+
+  def update
+  @user = User.find_by(id: params[:id])
+   @user.username = params[:username]
+   @user.email = params[:email]
+   if @user.save
+     flash[:notice] = "User editted"
+     redirect_to("/users/#{@user.id}")
+   else
+     render("users/edit")
+   end
   end
 
   private
