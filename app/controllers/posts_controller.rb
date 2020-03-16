@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    @post = Post.new(title: params[:title])
     @post = Post.new(content: params[:content])
     @post.save
     redirect_to("/posts")
@@ -24,8 +25,11 @@ class PostsController < ApplicationController
     @post = Post.find_by(id:params[:id])
     @post.content = params[:content]
     @post.title = params[:title]
-    @post.save
+    if @post.save
     redirect_to("/posts")
+    else
+    render("/posts/edit")
+    end
   end
 
   def destroy

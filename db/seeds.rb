@@ -1,7 +1,7 @@
 User.destroy_all
 u1 = User.create :email => 'yukiko@gmail.com', :username => 'Billy Raynor', :nick_name => 'young.darkness', :password => 'chicken'
-u2 = User.create :email => 'coat@outlook.com', :username => 'Zoie Keebler', :nick_name => 'king.fog', :password => 'chicken'
-u3 = User.create :email => 'simple35@gmail.com', :username => 'Rolando Hegmann', :nick_name => 'running-feather-41', :password => 'chicken'
+u2 = User.create :email => 'yukiko@outlook.com', :username => 'Zoie Keebler', :nick_name => 'king.fog', :password => 'chicken'
+u3 = User.create :email => 'yukikosan@gmail.com', :username => 'Rolando Hegmann', :nick_name => 'running-feather-41', :password => 'chicken'
 puts "#{User.count} users created"
 
 Post.destroy_all

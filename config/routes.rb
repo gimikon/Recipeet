@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   post 'posts/:id/update' => 'posts#update'
   post 'posts/:id/destroy' => 'posts#destroy'
 
+  get 'users/:id' => 'users#show'
+
 
 resources :users, :only => [:new, :create, :index]
 resources :posts
