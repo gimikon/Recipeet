@@ -1,3 +1,18 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// @import "bootstrap"
+
+body {
+    font-size: 10px;
+
+}
+.card, .posts-form {
+  margin:0 auto;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 15px;
+
+}
+
+.bio-container{
+
+text-align: center;
+}

@@ -1,16 +1,26 @@
-<h1>All Recipeets!</h1>
 
-<a href="posts/new">New Recipeet</a>
 
+
+
+<aside>
+  <p><%= render "shared/user_info" %></p>
+</aside>
+
+<div class="posts-form">
+<%= render 'shared/new' %>
+</div>
 
 <% @posts.each do |post| %>
 
-  <p><%= post.content %></p>
-  <p><%= post.user_id %></p>
+<div class="card" style="width: 35rem;">
+
+  <img class="card-img-top" src="<%= post.image %>" alt="Card image cap">
+    <h5 class="card-title"><%= post.title %></h5>
+      <%= link_to(post.content, "/posts/#{post.id}" )%>
 
 
-
-  <%= link_to(post.content, "/posts/#{post.id}" )%>
-  <img src="<%= post.image %>" alt="">
 </div>
+
+
 <% end %>
+</div>

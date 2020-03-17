@@ -1,33 +1,46 @@
-/* reset ================================ */
+@import "bootstrap";
+
+/* reset */
+
 * {
-  box-sizing: border-box;
   margin:0;
   padding:0;
+  box-sizing: border-box;
+  font-family: 'Avenir Next', 'Hiragino Sans', sans-serif;
 }
 
-ul, li {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+
+.top-container {
+  background-color: rgb(29,161,242);
+  height:80px;
+  display:flex;
+  justify-content: flex-end;
+  font-size: 13px;
+  color:ghostwhite
 }
 
-html {
-  font: 100%/1.5 'Avenir Next', 'Hiragino Sans', sans-serif;
-  line-height: 1.7;
-  letter-spacing: 1px;
+.top-container a {
+  color:ghostwhite;
+  margin-right: 20px;
+  font-size: 18px;
+  line-height:3;
+}
+
+li {
+  list-style: none;
+  line-height: 6;
 }
 
 a {
   text-decoration: none;
-  color: #2d3133;
-  font-size: 14px;
+  color:black;
+  padding-left: 20px;
+  padding-right:10px;
+
 }
 
-h1, h2, h3, h4, h5, h6, p {
-  margin: 0;
-}
-
-input {
-  background-color: transparent;
-  outline-width: 0;
+.top-main {
+  height:200px;
+  background-image: url('cooking.jpg');
+  background-size: cover;
 }

@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all.order(created_at: :desc)
+
   end
 
   def show
@@ -11,7 +12,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(content: params[:content], user_id: @current_user.id)
+    @post = Post.new(content: params[:content], image: params[:image], user_id: @current_user.id,)
     @post.save
     redirect_to("/posts")
   end

@@ -1,7 +1,7 @@
 User.destroy_all
-u1 = User.create :email => 'yukiko@gmail.com', :name => 'Billy Raynor', :password => 'chicken'
-u2 = User.create :email => 'yukiko@outlook.com', :name => 'Zoie Keebler', :password => 'chicken'
-u3 = User.create :email => 'yukikosan@gmail.com', :name => 'Rolando Hegmann', :password => 'chicken'
+u1 = User.create :email => 'yukiko@gmail.com', :name => 'Yukiko Isogimi', :password => 'chicken'
+u2 = User.create :email => 'yukiko@outlook.com', :name => 'Akiko Tominaga', :password => 'chicken'
+u3 = User.create :email => 'yukikosan@gmail.com', :name => 'Azusa Ito', :password => 'chicken'
 puts "#{User.count} users created"
 
 Post.destroy_all
@@ -18,3 +18,16 @@ puts "#{ Post.count } posts created"
 u1.posts << p1 << p2
 u2.posts << p2
 u3.posts << p3
+
+users = User.all
+user  = users.first
+following = users.take(2)
+followers = users.take(5).drop(2)
+following.each { |followed| user.follow(followed) }
+followers.each { |follower| follower.follow(user) }
+
+users = User.order(:created_at).take(3)
+50.times do
+  content = Faker::Lorem.sentence(5)
+  users.each { |user| user.woofs.create!(status: content) }
+end

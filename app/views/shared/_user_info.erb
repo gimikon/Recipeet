@@ -1,0 +1,10 @@
+<% if @current_user.present? %>
+
+<div class="bio-container">
+<h2><%= @current_user.name %></h2>
+  <p><%= @current_user.bio %></p>
+    <a href="#" class="btn btn-primary">View Profile</a>
+</div>
+
+
+<% end %>

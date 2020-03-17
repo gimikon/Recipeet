@@ -4,11 +4,9 @@ Rails.application.routes.draw do
   get 'top' => 'home#top'
   get 'about' => 'home#about'
   get '/' => 'home#top'
+  get '/signup' => "home#signup"
   #========================#
 
-  #Sign up routes#========================
-  get '/signup' => "pages#signup"
-  #========================#
 
   #Log in routes#========================
   get'/login' => 'session#new'
@@ -26,6 +24,12 @@ Rails.application.routes.draw do
 
 resources :users
 resources :posts
+
+resources :users do
+  member do
+    get :following, :followers
+  end
+end
 
 
 
