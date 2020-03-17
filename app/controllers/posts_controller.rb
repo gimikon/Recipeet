@@ -4,17 +4,19 @@ class PostsController < ApplicationController
 
   end
 
-  def show
-   @post = Post.find params[:id]
-  end
-
   def new
   end
 
   def create
-    @post = Post.new(content: params[:content], image: params[:image], user_id: @current_user.id,)
+    @post = Post.new(content: params[:content], image: params[:image], user_id: @current_user.id)
     @post.save
     redirect_to("/posts")
+  end
+
+  def show
+   @post = Post.find params[:id]
+   @post = Post.find_by(id: params[:id])
+   @user = Post.find_by(id: @post.user_id)
   end
 
   def edit

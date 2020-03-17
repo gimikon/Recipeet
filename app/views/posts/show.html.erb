@@ -3,9 +3,9 @@
 <ul>
   <li>Title: <%= @post.title %></li>
   <li>Content: <%= @post.content %></li>
-  <li> <%= @post.image %></li>
+
 
 </ul>
 
-<%= link_to("Edit", "/posts/#{@post.id}/edit") %>
-<%= link_to("Delete", "/posts/#{@post.id}/destroy", {method:"post"}) %>
+<%= link_to 'Edit Post', edit_post_path(@post) %>
+<%= link_to "Delete #{ @post.title }", @post, :method => 'delete' %>

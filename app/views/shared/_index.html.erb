@@ -1,16 +1,11 @@
 
-
-
-
 <aside>
   <p><%= render "shared/user_info" %></p>
 </aside>
 
-
 <div class="posts-form">
 <%= render 'shared/new' %>
 </div>
-
 
 <% @posts.each do |post| %>
 
@@ -23,5 +18,7 @@
 
 
 </div>
+
+
 <% end %>
 </div>

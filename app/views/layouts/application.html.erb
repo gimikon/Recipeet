@@ -16,12 +16,12 @@
     <div class="top-container">
 
       <nav>
-      <%= link_to "Home", root_path %>
+      <%= link_to "Home", "/posts" %>
       <% if @current_user.present? %>
 
         <%= link_to "Sign out #{ @current_user.email }", login_path, :method => 'delete' %>
       <% else %>
-        <%= link_to "Sign up","users/new" %>
+        <%= link_to "Sign up", "/users/new" %>
         <%= link_to "Sign in", login_path %>
       <% end %>
     </nav>
@@ -31,7 +31,7 @@
 </header>
 
     <div class="header-logo">
-      Recipeet
+
 
 
 <body>
