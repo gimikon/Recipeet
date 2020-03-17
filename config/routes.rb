@@ -3,13 +3,13 @@ Rails.application.routes.draw do
   root :to => "home#top"
 
   resources :posts
-  resources :pages
+
   #Log in & sign up & log out routes#========================
   get'/login' => 'session#new'
   post'/login' => 'session#create'
   delete'/login' => 'session#destroy'
-  get '/contact' => 'pages#contact'
-  get  '/about' => 'pages#about'
+  get '/contact' => 'home#contact'
+  get  '/about' => 'home#about'
   get '/users/new' => 'users#new'
   #========================#
 

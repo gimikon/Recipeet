@@ -1,12 +1,6 @@
-<div class="container-users">
 <h1>All Users</h1>
 
+
 <% @users.each do |user| %>
-
-<div>
-<p><%= user.name %></p>
-<%= link_to user.email, user %>
-
+  <p><%= user.email %></p>
 <% end %>
-</div>
-</div>

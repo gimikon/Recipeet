@@ -1,9 +1,9 @@
 
-
-
+<!-- ALL posts -->
 
 <aside>
   <p><%= render "shared/user_info" %></p>
+  <!-- this is log in User's info -->
 </aside>
 
 
@@ -17,9 +17,8 @@
 <div class="card" style="width: 40rem;">
 
   <img class="card-img-top" src="<%= post.image %>" alt="Card image cap">
-    <h5 class="card-title"><%= post.title %></h5>
+    <h5 class="card-title"><%= link_to(post.content, "/posts/#{post.id}" )%></h5>
 
-      <%= link_to(post.content, "/posts/#{post.id}" )%>
 
 
 </div>

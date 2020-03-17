@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :check_for_admin, :only => [:index]
+  # before_action :check_for_admin, :only => [:index]
 
   def index
     @users = User.all
@@ -20,7 +20,18 @@ class UsersController < ApplicationController
   end
 
   def edit
-   @user = User.find params[:id]
+    @user = User.find params[:id]
+  end
+
+  def update
+    user = Post.find params[:id]
+    post.update user_params
+    redirect_to user
+  end
+
+  def show
+    @user = User.find params[:id]
+
   end
 
   private
