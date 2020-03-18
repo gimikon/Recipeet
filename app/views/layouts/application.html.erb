@@ -4,41 +4,29 @@
     <title>Project1</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-
+    <%= cloudinary_js_config %>
   </head>
 
-  <header>
+    <body>
 
-    <div class="top-container">
+      <div class="top-container">
+          <nav>
+          <%= link_to "Home", "/posts" %>
+          <% if @current_user.present? %>
 
-      <nav>
-      <%= link_to "Home", "/posts" %>
-      <% if @current_user.present? %>
-
-        <%= link_to "Sign out #{ @current_user.email }", login_path, :method => 'delete' %>
-      <% else %>
-        <%= link_to "Sign up", "/users/new" %>
-        <%= link_to "Sign in", login_path %>
-      <% end %>
-    </nav>
-
+            <%= link_to "Sign out #{ @current_user.email }", login_path, :method => 'delete' %>
+          <% else %>
+            <%= link_to "Sign up", "/users/new" %>
+            <%= link_to "Sign in", login_path %>
+          <% end %>
+        </nav>
     </div>
 
-</header>
-
-    <div class="header-logo">
-
-
-
-<body>
-
+      <%= yield %>
 
     </body>
 
-  <%= yield %>
 
 </html>

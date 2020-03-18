@@ -2,8 +2,8 @@
 
 <div class="bio-container">
 <h2><%= @current_user.name %></h2>
-  <p><%= @current_user.bio %></p>
-  <button class="btn btn-primary">View Profile</button>
+  <p><%= @current_user.email %></p>
+  <button class="btn btn-primary"><%= link_to 'View', edit_user_path(@current_user.id)%></button>
 </div>
 
 

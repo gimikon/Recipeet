@@ -1,4 +1,4 @@
-<div class="container-signup">
+
 <h1>Log in</h1>
 
 <% if flash[:error].present? %>
@@ -6,16 +6,16 @@
 <% end %>
 
 <%= form_tag login_path do %>
-  <fieldset>
+  <div class="form-group">
     <%= label_tag :email %>
-    <%= email_field_tag :email %>
-  </fieldset>
+    <%= email_field_tag :email, nil, :class => 'form-control' %>
+  </div>
 
-  <fieldset>
+  <div class="form-group">
     <%= label_tag :password %>
-    <%= password_field_tag :password %>
-  </fieldset>
+    <%= password_field_tag :password, nil, :class => 'form-control' %>
+  </div>
+
 
   <%= submit_tag "Sign in" %>
 <% end %>
-</div>

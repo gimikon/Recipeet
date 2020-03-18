@@ -18,16 +18,3 @@ puts "#{ Post.count } posts created"
 u1.posts << p1 << p2
 u2.posts << p2
 u3.posts << p3
-
-users = User.all
-user  = users.first
-following = users.take(2)
-followers = users.take(5).drop(2)
-following.each { |followed| user.follow(followed) }
-followers.each { |follower| follower.follow(user) }
-
-users = User.order(:created_at).take(3)
-50.times do
-  content = Faker::Lorem.sentence(5)
-  users.each { |user| user.woofs.create!(status: content) }
-end

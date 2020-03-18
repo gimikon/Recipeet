@@ -24,14 +24,15 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = Post.find params[:id]
-    post.update user_params
+    user = User.find params[:id]
+    user.update user_params
     redirect_to user
   end
 
   def show
     @user = User.find params[:id]
-
+    @posts = Post.where("user_id = ?", @current_user.id)
+  # raise "hell"
   end
 
   private

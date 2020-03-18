@@ -1,7 +1,16 @@
+<p>This is where you see your followers and following and your feed</p>
+
 <div class="container-userinfo">
-<h1>Your page</h1>
-<p><%= @user.name %></p>
-<p><%= @user.email %></p>
+
+<h1>Your Profile</h1>
+<h2><%= @user.name %></h2>
+<h2><%= @user.email %></h2>
+
+<h1>Your feed</h1>
+<% @posts.each do |post| %>
+<p><%= post.content %></p>
+<% end %>
+
 
 
 </div>

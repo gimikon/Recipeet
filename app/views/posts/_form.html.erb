@@ -1,9 +1,9 @@
-<%= form_for @post do |f| %>
-
+<%= form_for(Post.new, :html => {:multipart => true}) do |f| %>
+<%= f.hidden_field :user_id, :value => @current_user.id %>
   <%= f.label :content %>
   <%= f.text_field :content %>
   <%= f.label :image %>
-  <%= f.url_field :image %>
-
+  <%= f.cl_image_upload :image %>
   <%= f.submit %>
+
 <% end %>
