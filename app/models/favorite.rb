@@ -1,3 +1,5 @@
 class Favorite < ApplicationRecord
-  belongs_to :user, :optional => true
+  validates :user_id, {presence: true}
+  validates :post_id, {presence: true}
+
 end

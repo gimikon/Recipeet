@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   get  '/about' => 'home#about'
   get '/users/new' => 'users#new'
   #========================#
+  post "favorites/:post_id/create" => "favorites#create"
+  post "favorites/:post_id/destroy" => "favorites#destroy"
+  get "users/:id/favorites" => "users#favorites"
 
   resources :users do
    member do

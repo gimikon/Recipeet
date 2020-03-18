@@ -13,3 +13,13 @@
 .container-userinfo {
   text-align: center;
 }
+
+.circle-img img {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  display: inline-block;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: inline-block;
+}

@@ -24,15 +24,24 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = User.find params[:id]
-    user.update user_params
-    redirect_to user
-  end
+   user = User.find params[:id]
+   cloudinary = Cloudinary::Uploader.upload( params[ "user" ][ "image" ] )
+   user.update user_params
+   user.update :image => cloudinary["url"]
+   redirect_to user_path
+   end
 
   def show
     @user = User.find params[:id]
     @posts = Post.where("user_id = ?", @current_user.id)
   # raise "hell"
+  end
+
+  def favorites
+  @user = User.find_by(id: params[:id])
+
+ # 変数@likesを定義してください
+  @favorites = Favorite.where(user_id: @user.id)
   end
 
   private

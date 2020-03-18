@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order("created_at DESC")
+    # @favorites_count = Favorite.where(post_id: @post.id).count
   end
 
   def new
