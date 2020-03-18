@@ -41,6 +41,6 @@ class PostsController < ApplicationController
   private # The following methods aren't accessible outside of this class.
   def post_params
     # Strong params: white list of sanitised input -- stuff we are happy to let the user provide.
-    params.require(:post).permit(:content,:image, :user_id)
+    params.require(:post).permit(:content,:image,:user_id)
   end
 end

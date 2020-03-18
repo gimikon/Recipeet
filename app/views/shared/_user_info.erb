@@ -1,10 +1,15 @@
 <% if @current_user.present? %>
 
 <div class="bio-container">
-<h2><%= @current_user.name %></h2>
-  <p><%= @current_user.email %></p>
-  <button class="btn btn-primary"><%= link_to 'View', edit_user_path(@current_user.id)%></button>
-</div>
 
+  <% if @current_user.name.present? %>
+    <h2><%= @current_user.name %></h2>
+  <% else %>
+    <h2><%= @current_user.email %></h2>
+  <% end %>
+
+  <button class="btn btn-primary"><%= link_to 'Edit', edit_user_path(@current_user.id)%></button>
+  <button class="btn btn-danger"><%= link_to 'Show', user_path(@current_user.id)%></button>
 
 <% end %>
+</div>
