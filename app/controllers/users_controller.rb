@@ -37,12 +37,21 @@ class UsersController < ApplicationController
   # raise "hell"
   end
 
-  def favorites
-  @user = User.find_by(id: params[:id])
-
- # 変数@likesを定義してください
-  @favorites = Favorite.where(user_id: @user.id)
+  def following
+  @title = "Following"
+  @user  = User.find(params[:id])
+  @users = @user.following.paginate(page: params[:page])
+  render 'show_follow'
   end
+
+  def followers
+  @title = "Followers"
+  @user  = User.find(params[:id])
+  @users = @user.followers.paginate(page: params[:page])
+  render 'show_follow'
+  end
+
+
 
   private
   def user_params
