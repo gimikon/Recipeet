@@ -8,8 +8,10 @@
     <h2><%= @current_user.email %></h2>
   <% end %>
 
-  <button class="btn btn-primary"><%= link_to 'Edit', edit_user_path(@current_user.id)%></button>
-  <button class="btn btn-danger"><%= link_to 'Show', user_path(@current_user.id)%></button>
 
-<% end %>
+
+  <button class="btn btn-primary"><%= link_to'Edit', edit_user_path(@current_user.id)%></button>
+  <button class="btn btn-success"><%= link_to'Show', user_path(@current_user.id)%></button>
+
 </div>
+<% end %>

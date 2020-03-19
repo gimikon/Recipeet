@@ -2,7 +2,15 @@
 
 <!-- ALL posts -->
 <p><%= render "shared/user_info" %></p>
+<section class="stats">
+       <%= render 'shared/stats' %>
+</section>
+
+
+
+
 <p><%= render 'posts/form' %></p>
+
 
 
 <% @posts.each do |post| %>
@@ -17,7 +25,7 @@
      <% else %>
        <p><%= post.user.email %></p>
       <% end %>
-      <a href="#"><div class="far fa-heart"></div></a>
+
 
   </div>
 

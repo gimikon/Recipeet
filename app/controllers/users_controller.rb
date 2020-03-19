@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     @user = User.new user_params
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_path
+      redirect_to edit_user_path(@user.id)
     else
       render :new
     end
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 
   def update
    user = User.find params[:id]
-   cloudinary = Cloudinary::Uploader.upload( params[ "user" ][ "image" ] )
+   cloudinary = Cloudinary::Uploader.upload( params[ "user" ][ "image" ] ) if ( params[ "user" ] ).present?
    user.update user_params
    user.update :image => cloudinary["url"]
    redirect_to user_path
@@ -33,22 +33,24 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find params[:id]
-    @posts = Post.where("user_id = ?", @current_user.id)
-  # raise "hell"
+    @following = following?(@user.id)
+    # raise "hell"
+    @posts = Post.where("user_id = ?", params[:id]).order("created_at DESC")
+
   end
 
   def following
   @title = "Following"
   @user  = User.find(params[:id])
-  @users = @user.following.paginate(page: params[:page])
+  @users = User.find(params[:id]).following
   render 'show_follow'
   end
 
   def followers
   @title = "Followers"
   @user  = User.find(params[:id])
-  @users = @user.followers.paginate(page: params[:page])
-  render 'show_follow'
+  @users = User.find(params[:id]).followers
+  render 'show_follower'
   end
 
 

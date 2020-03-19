@@ -1,8 +1,5 @@
-<p>This is where you see your followers and following and your feed</p>
 
 <div class="container-userinfo">
-
-<h1>Your Profile</h1>
 <% if @user.image.present? %>
 <div class="circle-img">
 <%= image_tag @user.image %>
@@ -11,19 +8,32 @@
 
 <h3><%= @user.name %></h3>
 <h3><%= @user.email %></h3>
+<%= render 'shared/stats' %>
+<%= render 'follow_form' if @current_user.present? %>
 
-<h2>Your feed</h2>
+
+
+<h3>feed</h3>
 <% @posts.each do |post| %>
-<p><%= post.content %></p>
+
+  <div class="card" style="width: 24rem">
+    <% if post.image.present? %>
+      <%= cl_image_tag(post.image, :class => "card-img-top")%>
+    <% end %>
+    <h5 class="card-title"><%= link_to(post.content, "/posts/#{post.id}" )%></h5>
+     <% if post.user.present?%>
+       <p><%= link_to post.user.name, user_path(post.user.id)%></p>
+     <% else %>
+       <p><%= post.user.email %></p>
+      <% end %>
+  </div>
+
 <% end %>
-</div>
+
 <!--
 <section class="stats">
      render 'shared/stats'
     </section>
    render 'follow_form' if logged_in? %>
  -->
-
-
-
 </div>

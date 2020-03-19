@@ -18,3 +18,7 @@ puts "#{ Post.count } posts created"
 u1.posts << p1 << p2
 u2.posts << p2
 u3.posts << p3
+
+u1.follow(u2)
+u1.follow(u3)
+u2.follow(u1)

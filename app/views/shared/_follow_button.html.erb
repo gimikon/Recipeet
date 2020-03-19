@@ -1,0 +1,20 @@
+<% if @current_user.id != @user.id %>
+<div class="col s12">
+  <div class="panel panel-default">
+
+    <center>
+
+      <% if !@following %>
+        <%= form_for(@user) do |f| %>
+          <%= hidden_field_tag :followed_id, @user.id %>
+          <%= f.submit "Follow", class:"btn btn-primary" %>
+        <% end %>
+      <% else %>
+        <%= form_for(@user, html: {method: :delete }) do |f|%>
+          <%= f.submit "Unfollow", class:"btn" %>
+        <% end %>
+      <% end %>
+    </center>
+  </div>
+</div>
+<% end %>
