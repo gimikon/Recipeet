@@ -1,6 +1,7 @@
 
 
 <!-- ALL posts -->
+
 <p><%= render "shared/user_info" %></p>
 <section class="stats">
        <%= render 'shared/stats' %>
@@ -20,7 +21,7 @@
       <%= cl_image_tag(post.image, :class => "card-img-top")%>
     <% end %>
     <div class="food">
-      
+
       <% if post.user.image.present? %>
         <div class="small-circle-img">
          <%= image_tag post.user.image %>
