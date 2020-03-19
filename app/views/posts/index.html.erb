@@ -19,14 +19,21 @@
     <% if post.image.present? %>
       <%= cl_image_tag(post.image, :class => "card-img-top")%>
     <% end %>
-    <h5 class="card-title"><%= link_to(post.content, "/posts/#{post.id}" )%></h5>
-     <% if post.user.present?%>
-       <p><%= link_to post.user.name, user_path(post.user.id)%></p>
-     <% else %>
-       <p><%= post.user.email %></p>
-      <% end %>
+    <div class="food">
+      
+      <% if post.user.image.present? %>
+        <div class="small-circle-img">
+         <%= image_tag post.user.image %>
+        </div>
+      <% end  %>
+
+      <div class="">
+        <h5 class="card-title"><%= link_to(post.content, "/posts/#{post.id}" )%></h5>
+        <p><%= link_to post.user.name, user_path(post.user.id)%></p>
+      </div>
 
 
+    </div>
   </div>
 
 <% end %>

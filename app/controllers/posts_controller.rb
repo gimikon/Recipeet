@@ -2,7 +2,9 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all.order("created_at DESC")
-    @user = User.find_by(id: params[:id])
+    @user = User.find_by(:id => params[:id])
+    # raise 'hell'
+    @post = Post.find_by(params[:id])
     # @favorites_count = Favorite.where(post_id: @post.id).count
   end
 
