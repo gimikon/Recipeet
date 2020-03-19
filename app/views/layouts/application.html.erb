@@ -17,9 +17,11 @@
           <nav>
             <% if @current_user.present? %>
                 <%= link_to "Home", "/posts" %>
+                <%= link_to "Users", "/users" %>
                 <%= link_to "Sign out #{ @current_user.email }", login_path, :method => 'delete' %>
             <% else %>
                 <%= link_to "Home", "/" %>
+
                 <%= link_to "Sign up", "/users/new" %>
                 <%= link_to "Sign in", login_path %>
             <% end %>
