@@ -12,15 +12,12 @@ Rails.application.routes.draw do
   get  '/about' => 'home#about'
   get '/users/new' => 'users#new'
   #========================#
-  resources :posts do
-    resources :likes
-  end
-
   resources :users do
    member do
      get :following, :followers
    end
  end
 
-   resources :relationships, only: [:create, :destroy]
+ resources :relationships
+
 end
