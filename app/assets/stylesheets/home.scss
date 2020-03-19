@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
 
 /* reset */
 
@@ -6,17 +6,28 @@
   margin:0;
   padding:0;
   box-sizing: border-box;
-  font-family: 'Avenir Next', 'Hiragino Sans', sans-serif;
+  font-family: "Roboto Slab", 'Hiragino Sans', sans-serif;
+}
+
+body {
+  background-image: url("recipe.jpg");
+  background-size: cover;
+}
+
+
+.top {
+  text-align: center;
+  // background-image: url("cooking.jpg");
 }
 
 
 
 .top-container {
-  background-color: rgb(29,161,242);
+  background-color: #ff9248;
   height:65px;
   display:flex;
   justify-content: flex-end;
-  font-size: 10px;
+  font-size: 12px;
   color:ghostwhite
 }
 
@@ -43,4 +54,5 @@ a {
 h1 {
   margin-top: 100px;
   text-align: center;
+  font-weight: 600;
 }
