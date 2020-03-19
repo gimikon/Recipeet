@@ -7,12 +7,15 @@
   text-align: center;
 }
 
+
+
 .signup {
   text-align: center;
 }
 
 .container-userinfo {
   text-align: center;
+  margin-top: 72px;
 }
 
 .circle-img img {
@@ -42,4 +45,9 @@ body.users.new {
 body.session.new {
   background-image: url("recipe.jpg");
   background-size: cover;
+}
+
+.stats {
+  margin-left: 233px;
+  margin-bottom: 31px;
 }

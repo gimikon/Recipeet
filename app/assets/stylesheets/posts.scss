@@ -1,9 +1,12 @@
 // @import "bootstrap"
 
-body {
-    font-size: 12px;
+body.posts.index {
+    background-image:url("index7.jpg");
+    background-size: cover;
 
 }
+
+
 .card, .posts-form {
   margin:0 auto;
   text-align: center;
