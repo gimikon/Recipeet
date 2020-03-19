@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   #top page routes#========================
-  root :to => "home#top"
+   root :to => "home#homepage"
 
   resources :posts
 
