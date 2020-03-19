@@ -30,6 +30,7 @@
 
 button a{
   color: white;
+  padding:15px;
 
 }
 
@@ -49,5 +50,9 @@ body.session.new {
 
 .stats {
   margin-left: 233px;
-  margin-bottom: -32px;
+  margin-bottom: 13px;
+}
+
+.stats-container{
+  margin-left: 245px;
 }

@@ -33,7 +33,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find params[:id]
-    @following = following?(@user.id)
+    # @following = following?(@user.id)
     # raise "hell"
     @posts = Post.where("user_id = ?", params[:id]).order("created_at DESC")
 

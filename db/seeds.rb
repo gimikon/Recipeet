@@ -8,7 +8,7 @@ Post.destroy_all
 
 p1 = Post.create :title => 'Curry', :content => "I made japanese curry tonight", :image => "https://img-global.cpcdn.com/recipes/565cd0f552e847e9/1280x1280sq70/photo.jpg"
 
-p2 = Post.create :title => "Cookies", :content => "I am going to make cookies today", :image => "https://img-global.cpcdn.com/recipes/19cf37bb1fbc43b2/1280x1280sq70/photo.jpg"
+p2 = Post.create :title => "Indian Food", :content => "I am going to make cookies today", :image => "https://img.cpcdn.com/recipes/3671804/m/24c70ae45315664383519939874fd4fd.jpg?u=9916351&p=1454829767"
 
 p3 = Post.create :title => "Tomato Past", :content => "I made Special tomato pasta today, please check it out", :image => "https://img-global.cpcdn.com/recipes/416c32f67bb6e167/1280x1280sq70/photo.jpg"
 
