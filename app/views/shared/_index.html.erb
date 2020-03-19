@@ -9,12 +9,12 @@
 
 <% @posts.each do |post| %>
 
-<div class="card" style="width: 40rem;">
+<div class="card" style="width: 35rem;">
 
   <img class="card-img-top" src="<%= post.image %>" alt="Card image cap">
     <h5 class="card-title"><%= post.title %></h5>
     <%= link_to(post.content, "/posts/#{post.id}" )%>
-    
+
 
 
 
