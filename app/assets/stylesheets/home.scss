@@ -9,7 +9,7 @@
   font-family: "Roboto Slab", 'Hiragino Sans', sans-serif;
 }
 
-body {
+body.home.top {
   background-image: url("recipe.jpg");
   background-size: cover;
 }
@@ -17,7 +17,18 @@ body {
 
 .top {
   text-align: center;
+  margin-left: 550px;
   // background-image: url("cooking.jpg");
+}
+
+.top p {
+  font-size: 18px;
+  margin-bottom: 100px;
+}
+
+.top a {
+  color:dodgerblue;
+  text-decoration: underline;
 }
 
 
@@ -55,4 +66,9 @@ h1 {
   margin-top: 100px;
   text-align: center;
   font-weight: 600;
+}
+
+.signup {
+  margin: 0 auto;
+  text-align: center;
 }
