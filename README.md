@@ -5,7 +5,7 @@ Second Project of Software Engineering Immersive Course SEI36.
  - Link:https://gimikon.herokuapp.com/
 
 ### How to use
-You can post your food pictures that you made, cooked, and ate at restaurant! People can follow you and look at your feed you posted !
+You can post your food pictures that you made, cooked, ate, anything related to food because we love food ! People can follow you and look at your feed you posted.
 
 
 ### Technology  
