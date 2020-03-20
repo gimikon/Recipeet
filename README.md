@@ -16,8 +16,9 @@ HTML,CSS,Ruby, Ruby on rails
 
 
 ### Wanted features
-- Likes
+- Likes model
 - resposive
 - footer
 - header
 - clean up messy code
+- so much more! 
